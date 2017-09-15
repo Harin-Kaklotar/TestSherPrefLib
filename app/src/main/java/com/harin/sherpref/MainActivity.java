@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_add_int:
 
+                GetSetPreference.ClearAllPreference();
+
                 break;
             case R.id.btn_get_int:
 

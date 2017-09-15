@@ -15,6 +15,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 
+
 /**
  * Created by Life on 04.08.2017 - 8:14 PM
  * <p>
@@ -29,8 +30,9 @@ public class HarinSharedPreference implements SharedPreferences {
     // your app.
 
 
-    protected SharedPreferences delegate;
+    private static SharedPreferences delegate;
     protected Context context;
+
 
     public HarinSharedPreference(Context context, SharedPreferences delegate) {
         this.delegate = delegate;
