@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.harin.sherpref.MainActivity">
 
-    <TextView
-        android:id="@+id/lbl_hello_world"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et_value"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:hint="enter value"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,40 +19,159 @@
         android:id="@+id/btn_add_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
         android:text="Add String"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_below="@+id/et_value"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btn_get_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
         android:text="Get String"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_below="@+id/et_value"
+        android:layout_alignRight="@+id/btn_get_int"
+        android:layout_alignEnd="@+id/btn_get_int" />
 
     <Button
         android:id="@+id/btn_add_int"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:text="Add int"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add_string" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_string"
+        android:layout_below="@+id/btn_add_string"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btn_get_int"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginRight="15dp"
         android:text="get int"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_get_string" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_string"
+        android:layout_marginEnd="15dp"
+        android:layout_below="@+id/btn_get_string"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/lbl_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_add_int"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:layout_toEndOf="@+id/btn_add_string"
+        android:layout_toRightOf="@+id/btn_add_string"/>
+
+    <Button
+        android:id="@+id/btn_add_boolean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_add_int"
+        android:layout_marginTop="16dp"
+        android:text="Add Boolean" />
+
+    <Button
+        android:id="@+id/btn_get_boolean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_get_int"
+        android:layout_alignStart="@+id/btn_get_int"
+        android:layout_alignTop="@+id/btn_add_boolean"
+        android:text="Get Boolean" />
+
+    <Button
+        android:id="@+id/btn_add_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_add_boolean"
+        android:layout_marginTop="28dp"
+        android:layout_toLeftOf="@+id/lbl_string"
+        android:layout_toStartOf="@+id/lbl_string"
+        android:text="Add Long" />
+
+    <Button
+        android:id="@+id/btn_get_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_get_boolean"
+        android:layout_alignRight="@+id/btn_get_boolean"
+        android:layout_alignTop="@+id/btn_add_long"
+        android:text="Get Long" />
+
+    <Button
+        android:id="@+id/btn_add_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_add_long"
+        android:layout_alignRight="@+id/btn_add_long"
+        android:layout_below="@+id/btn_add_long"
+        android:layout_marginTop="23dp"
+        android:text="Add Float" />
+
+    <Button
+        android:id="@+id/btn_get_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_get_long"
+        android:layout_alignStart="@+id/btn_get_long"
+        android:layout_alignTop="@+id/btn_add_float"
+        android:text="Ge Float" />
+
+    <TextView
+        android:id="@+id/lbl_int"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_add_boolean"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/btn_add_string"
+        android:layout_toRightOf="@+id/btn_add_string" />
+
+    <TextView
+        android:id="@+id/lbl_boolean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_add_long"
+        android:layout_marginBottom="13dp"
+        android:layout_toEndOf="@+id/btn_add_long"
+        android:layout_toRightOf="@+id/btn_add_long" />
+
+    <TextView
+        android:id="@+id/lbl_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_int"
+        android:layout_alignStart="@+id/lbl_int"
+        android:layout_alignTop="@+id/btn_add_long"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/lbl_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_string"
+        android:layout_alignRight="@+id/lbl_string"
+        android:layout_alignTop="@+id/btn_add_float"
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Clear" />
+
+
+</RelativeLayout>

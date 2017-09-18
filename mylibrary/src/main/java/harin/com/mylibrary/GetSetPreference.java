@@ -23,7 +23,7 @@ public class GetSetPreference {
     }
 
     public static String getString(Context context, @NonNull String key) {
-        initPref(context, key);
+        //initPref(context, key);
         return sharedPreferences.getString(key, null);
     }
 
@@ -36,7 +36,7 @@ public class GetSetPreference {
     }
 
     public static int getInt(Context context, @NonNull String key) {
-        initPref(context, key);
+        //initPref(context, key);
         return sharedPreferences.getInt(key, 1);
     }
 
@@ -45,23 +45,48 @@ public class GetSetPreference {
     ///////////////////////////////////////////////////////////////////////////
     public static void setBoolean(Context context, @NonNull String key, boolean value) {
         initPref(context, key);
-        sharedPreferences.edit().putBoolean(key, value);
+        sharedPreferences.edit().putBoolean(key, value).apply();
     }
 
     public static boolean getBoolean(Context context, @NonNull String key) {
+        //initPref(context, key);
+        return sharedPreferences.getBoolean(key, false);
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Float preference
+    ///////////////////////////////////////////////////////////////////////////
+    public static void setFloat(Context context, @NonNull String key, @NonNull float value){
         initPref(context, key);
-        sharedPreferences.getBoolean(key, false);
-        return false;
+        sharedPreferences.edit().putFloat(key, value).apply();
+    }
+
+    public static float getFloat(Context context, @NonNull String key){
+        //initPref(context, key);
+        return sharedPreferences.getFloat(key, 0);
     }
 
 
+    ///////////////////////////////////////////////////////////////////////////
+    // Long share preference
+    ///////////////////////////////////////////////////////////////////////////
+    public static void setLong(Context context, @NonNull String key, @NonNull long value){
+        initPref(context, key);
+        sharedPreferences.edit().putLong(key, value).apply();
+    }
+
+    public static long getLong(Context context, @NonNull String key){
+        //initPref(context, key);
+        return sharedPreferences.getLong(key, 0);
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // initialie share preference with keys
+    ///////////////////////////////////////////////////////////////////////////
     private static void initPref(Context context, @NonNull String key) {
         sharedPreferences = new HarinSharedPreference(context, context.getSharedPreferences(key, Context.MODE_PRIVATE));
     }
 
-    ///////////////////////////////////////////////////////////////////////////
-    //
-    ///////////////////////////////////////////////////////////////////////////
     /*
     *  To clear all the stored SharedPreferences
     * */
