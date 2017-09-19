@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_add_boolean:
-                GetSetPreference.setInt(this,"KEY_BOOL",true);
+                GetSetPreference.setBoolean(this,"KEY_BOOL",true);
                 break;
             case R.id.btn_get_boolean:
                 test = GetSetPreference.getString(this, "KEY_BOOL");
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_add_long:
                 et = enterValue.getText().toString();
-                GetSetPreference.setInt(this,"KEY_LONG",Long.parseLong(et));
+                GetSetPreference.setLong(this,"KEY_LONG",Long.parseLong(et));
                 break;
             case R.id.btn_get_long:
                 test = GetSetPreference.getString(this, "KEY_LONG");
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_add_float:
                 et = enterValue.getText().toString();
-                GetSetPreference.setInt(this,"KEY_FLOAT",Float.parseFloat(et));
+                GetSetPreference.setFloat(this,"KEY_FLOAT",Float.parseFloat(et));
                 break;
             case R.id.btn_get_float:
                 test = GetSetPreference.getString(this, "KEY_FLOAT");
